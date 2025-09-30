@@ -348,6 +348,7 @@ bool can_parse_error_status(can_data_t *channel, struct gs_host_frame *frame, ui
 		if (!(last_err & FDCAN_PSR_BO)) {
 			/* We transitioned to bus-off. */
 			frame->can_id |= CAN_ERR_BUSOFF;
+			CLEAR_BIT(channel->channel.Instance->CCCR, FDCAN_CCCR_INIT);
 			should_send = true;
 		}
 	}

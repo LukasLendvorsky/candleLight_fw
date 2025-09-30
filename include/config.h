@@ -355,7 +355,7 @@ THE SOFTWARE.
 	#define TIM2_CLOCK_SPEED		 64000000
 
 	#define CAN_CLOCK_SPEED			 40000000
-	#define NUM_CAN_CHANNEL			 2
+	#define NUM_CAN_CHANNEL			 1
 	#define CONFIG_CANFD			 1
 
 #elif defined(BOARD_nucleo_g0b1re)
