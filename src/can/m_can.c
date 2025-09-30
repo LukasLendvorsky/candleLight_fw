@@ -165,7 +165,7 @@ void can_enable(can_data_t *channel, uint32_t mode)
 
 	/* Enable automatic transceiver delay compensation */
 	HAL_FDCAN_ConfigTxDelayCompensation(&channel->channel,
-										channel->channel.Init.DataTimeSeg1 * channel->channel.Init.DataPrescaler,
+										(1 + channel->channel.Init.DataTimeSeg1 + channel->channel.Init.DataTimeSeg2) / 2,
 										0U);
 	HAL_FDCAN_EnableTxDelayCompensation(&channel->channel);
 
